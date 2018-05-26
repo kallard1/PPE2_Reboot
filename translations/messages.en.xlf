@@ -79,12 +79,12 @@
 
             <trans-unit id="registration.form.addressLine2">
                 <source>registration.form.addressLine2</source>
-                <target>Apartment, suite, unit, building, floor, etc.</target>
+                <target>Apartment, suite, unit, building, floor, etc. (optional)</target>
             </trans-unit>
 
-            <trans-unit id="registration.form.postalCode">
-                <source>registration.form.postalCode</source>
-                <target>Postal code</target>
+            <trans-unit id="registration.form.postcode">
+                <source>registration.form.postcode</source>
+                <target>Postcode</target>
             </trans-unit>
 
             <trans-unit id="registration.form.city">

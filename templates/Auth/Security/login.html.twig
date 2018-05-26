@@ -9,22 +9,22 @@
         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
 
         <div class="form-row">
-            <div class="form-group offset-4">
-                <label for="email">{{ 'security.login.email'|trans }}</label>
+            <div class="form-group offset-3 col-md-6">
+                <label for="email"></label>
                 <input type="text" id="email" name="_email" value="{{ last_email }}" class="form-control"
-                       required="required" autocomplete="email"/>
+                       required="required" autocomplete="email" placeholder="{{ 'security.login.email'|trans }}"/>
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group offset-4">
-                <label for="password">{{ 'security.login.password'|trans }}</label>
+            <div class="form-group offset-3 col-md-6">
+                <label for="password"></label>
                 <input type="password" id="password" name="_password" class="form-control" required="required"
-                       autocomplete="off"/>
+                       autocomplete="off" placeholder="{{ 'security.login.password'|trans }}"/>
             </div>
         </div>
 
         <div class="form-row">
-            <div class="form-group offset-4">
+            <div class="form-group offset-3 col-md-6">
                 <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
                 <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
             </div>
@@ -33,7 +33,7 @@
         <br/>
 
         <div class="form-row">
-            <div class="form-group offset-4">
+            <div class="form-group offset-3 col-md-6">
                 <input type="submit" class="btn btn-outline-primary" name="_submit"
                        value="{{ 'security.login.sign_in'|trans }}"/>
             </div>

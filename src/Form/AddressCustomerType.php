@@ -26,7 +26,7 @@ class AddressCustomerType extends AbstractType
             ])
             ->add('postalCode', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'registration.form.postalCode',
+                    'placeholder' => 'registration.form.postcode',
                     'maxlength' => 10
                 ]
             ])
