@@ -1,0 +1,122 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {{ form_start(form, {'method': 'post', 'action': path('registration')}) }}
+
+    <div class="form-row">
+        <div class="form-group offset-3 col-md-6">
+            {{ form_errors(form.businessName) }}
+
+            {{ form_widget(form.businessName, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group offset-3 col-md-6">
+            {{ form_errors(form.companyRegister) }}
+
+            {{ form_widget(form.companyRegister, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group offset-3 col-md-6">
+            {{ form_errors(form.vatNumber) }}
+
+            {{ form_widget(form.vatNumber, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    {% for addressField in form.addresses %}
+        <div class="form-row">
+            <div class="form-group offset-3 col-md-6">
+                {{ form_errors(addressField.line1) }}
+
+                {{ form_widget(addressField.line1, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group offset-3 col-md-6">
+                {{ form_errors(addressField.line2) }}
+
+                {{ form_widget(addressField.line2, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group offset-3 col-md-3">
+                {{ form_errors(addressField.postalCode) }}
+
+
+                {{ form_widget(addressField.postalCode, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group col-md-3">
+                {{ form_errors(addressField.city) }}
+
+                {{ form_widget(addressField.city, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group offset-3 col-md-6">
+                {{ form_errors(addressField.country) }}
+
+                {{ form_widget(addressField.country, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group offset-3 col-md-6">
+                {{ form_errors(addressField.phone) }}
+
+                {{ form_widget(addressField.phone, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="checkbox" style="display: none;">
+            <label>
+                {{ form_widget(addressField.asDefault, {'attr': {'class': 'form-control', 'checked': 'true'}}) }} As
+                default
+            </label>
+        </div>
+    {% endfor %}
+
+
+    <div class="form-row">
+        <div class="form-group offset-3 col-md-6">
+            {{ form_errors(form.username) }}
+
+            {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group offset-3 col-md-3">
+            {{ form_errors(form.plainPassword.first) }}
+
+            {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group col-md-3">
+            {{ form_errors(form.plainPassword.second) }}
+
+            {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group offset-3 col-md-6">
+            {{ form_errors(form.email) }}
+
+            {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="offset-3 col-md-6">
+            <input class="btn btn-outline-primary col-md-12" name="_submit" type="submit"
+                   value="{{ 'registration.form.submit'|trans }}"/>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}
