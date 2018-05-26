@@ -1,0 +1,20 @@
+<div class="btn-group">
+    <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="catalog">
+        Catalog <span class="caret"></span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right">
+        {% if categories %}
+            {% for category in categories %}
+                {% if (category.parent) %}
+                    <a class="dropdown-item" href="{{ path('catalog', {'slug': category.slug}) }}">{{ category.name }}</a>
+                {% else %}
+                    <h6 class="dropdown-header">
+                        {{ category.name }}
+                    </h6>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <a class="dropdown-item">Aucune catégorie</a>
+        {% endif %}
+    </div>
+</div>
