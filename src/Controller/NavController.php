@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class NavController extends AbstractController
 {
-    public function categoriesAction()
+    public function categoriesList()
     {
         $repository = $this
             ->getDoctrine()
