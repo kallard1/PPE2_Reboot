@@ -1,0 +1,82 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="checkout">
+        <div class="col-md-12 product-price1">
+            <div class="check-out">
+                <div class=" cart-items">
+                    <h3>Mon panier</h3>
+
+                    <table id="cart" class="table table-striped table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Produit</th>
+                            <th>Prix Unitaire</th>
+                            <th>Quantité</th>
+                            <th>Prix H.T.</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in products %}
+                            <tr class="cart-header">
+                                <td>{{ item.product.name }}</td>
+                                <td>
+                                    {% if item.promotion is not null %}
+                                        {% set puht = item.product.price - (item.product.price * item.promotion / 100) %}
+                                        {{ puht }}
+                                    {% else %}
+                                        {% set puht = item.product.price %}
+                                        {{ puht }}
+                                    {% endif %}
+                                </td>
+                                <td>{{ item.quantity }}</td>
+                                <td class="price-ht">{{ puht * item.quantity }}</td>
+                                <td>
+                                    <a href="{{ path('remove_to_cart', {'sku' : item.product.sku }) }}"
+                                       class="add-cart cart-check">
+                                        <i class="mdi mdi-delete mdi-18px text-danger"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="3" style="text-align: right">
+                                Total H.T.
+                            </td>
+                            <td colspan="2" class="total-price-ht">
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="3" style="text-align: right">
+                                T.V.A. (20%)
+                            </td>
+                            <td colspan="2" class="vat">
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="3" style="text-align: right">
+                                Total T.T.C
+                            </td>
+                            <td colspan="2" class="total-with-tax">
+
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/js/cart.js') }}"></script>
+{% endblock %}

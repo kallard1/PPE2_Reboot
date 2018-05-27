@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <!-- Gobal -->
+            <trans-unit id="submit">
+                <source>submit</source>
+                <target>Submit</target>
+            </trans-unit>
+
+            <!-- Title -->
+            <trans-unit id="page.title.welcome">
+                <source>page.title.welcome</source>
+                <target>Welcome</target>
+            </trans-unit>
+
+            <!-- Navbar -->
+            <trans-unit id="menu.home">
+                <source>menu.home</source>
+                <target>Home</target>
+            </trans-unit>
+
+            <trans-unit id="menu.sign_up">
+                <source>menu.sign_up</source>
+                <target>Sign up</target>
+            </trans-unit>
+
+            <trans-unit id="menu.sign_in">
+                <source>menu.sign_in</source>
+                <target>Sign in</target>
+            </trans-unit>
+
+            <trans-unit id="menu.sign_out">
+                <source>menu.sign_out</source>
+                <target>Sign out</target>
+            </trans-unit>
+
+            <!-- Security | Login -->
+            <trans-unit id="security.login.email">
+                <source>security.login.email</source>
+                <target>E-mail</target>
+            </trans-unit>
+
+            <trans-unit id="security.login.password">
+                <source>security.login.password</source>
+                <target>Password</target>
+            </trans-unit>
+
+            <trans-unit id="security.login.remember_me">
+                <source>security.login.remember_me</source>
+                <target>Remember me</target>
+            </trans-unit>
+
+            <trans-unit id="security.login.sign_in">
+                <source>security.login.sign_in</source>
+                <target>Sign in</target>
+            </trans-unit>
+
+            <!-- Registration -->
+            <trans-unit id="registration.form.businessName">
+                <source>registration.form.businessName</source>
+                <target>Business Name</target>
+            </trans-unit>
+
+            <trans-unit id="registration.form.companyRegister">
+                <source>registration.form.companyRegister</source>
+                <target>Company register</target>
+            </trans-unit>
+
+            <trans-unit id="registration.form.vatNumber">
+                <source>registration.form.vatNumber</source>
+                <target>V.A.T. Number</target>
+            </trans-unit>
+
+            <trans-unit id="registration.form.addressLine1">
+                <source>registration.form.addressLine1</source>
+                <target>Street and number, P.O. box, c/o</target>
+            </trans-unit>
+
+            <trans-unit id="registration.form.addressLine2">
+                <source>registration.form.addressLine2</source>
+                <target>Apartment, suite, unit, building, floor, etc. (optional)</target>
+            </trans-unit>
+
+            <trans-unit id="registration.form.postcode">
+                <source>registration.form.postcode</source>
+                <target>Postcode</target>
+            </trans-unit>
+
+            <trans-unit id="registration.form.city">
+                <source>registration.form.city</source>
+                <target>City</target>
+            </trans-unit>
+
+            <trans-unit id="registration.form.country">
+                <source>registration.form.country</source>
+                <target>Country</target>
+            </trans-unit>
+
+            <trans-unit id="registration.form.phone">
+                <source>registration.form.phone</source>
+                <target>Phone</target>
+            </trans-unit>
+
+            <trans-unit id="registration.form.username">
+                <source>registration.form.username</source>
+                <target>Username</target>
+            </trans-unit>
+
+            <trans-unit id="registration.form.password">
+                <source>registration.form.password</source>
+                <target>Password</target>
+            </trans-unit>
+
+            <trans-unit id="registration.form.confirm_password">
+                <source>registration.form.confirm_password</source>
+                <target>Confirm password</target>
+            </trans-unit>
+
+            <trans-unit id="registration.form.email">
+                <source>registration.form.email</source>
+                <target>Email</target>
+            </trans-unit>
+
+            <trans-unit id="registration.form.submit">
+                <source>registration.form.submit</source>
+                <target>Register</target>
+            </trans-unit>
+
+            <trans-unit id="registration.flash.message.success">
+                <source>registration.flash.message.success</source>
+                <target>Congrats, your account is now created.</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>
