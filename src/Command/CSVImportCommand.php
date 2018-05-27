@@ -74,9 +74,10 @@ class CSVImportCommand extends ContainerAwareCommand
             $product->setPromotion($row['promotion']);
 
             if (!$product->getCategories()->contains($category)) {
+                $product->getCategories()->clear();
                 $product->addCategory($category);
             }
-            
+
             $category = $em->getRepository('App:Category')->findOneBy(['slug' => 'promotions']);
 
             if ($row['promotion'] > 0) {
