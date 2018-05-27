@@ -35,22 +35,22 @@
                                 {% endif %}
 
                                 {% if product.stock != 0 %}
-                                    <select id="quantity-product-{{ product.id }}" class="form-control item_quantity">
+                                    <select id="quantity-product-{{ product.sku }}" class="form-control item_quantity">
                                         {% for i in 1..product.stock %}
                                             <option value="{{ i }}">{{ i }}</option>
                                         {% endfor %}
                                     </select>
-                                    <label for="quantity-product-{{ product.id }}"></label>
+                                    <label for="quantity-product-{{ product.sku }}"></label>
                                 {% else %}
                                     Produit épuisé
                                 {% endif %}
                             </td>
                             {% if product.stock != 0 %}
                                 <td class="col-md-1 center-align">
-                                    {#<a data-href="{{ path('add_to_cart', {id: product.id}) }}"#}
-                                       {#data-id="{{ product.id }}" class="btn btn-default" type="button">#}
-                                        {#Ajouter au panier#}
-                                    {#</a>#}
+                                    <a style="color: #ffffff;" data-href="{{ path('add_to_cart', {sku: product.sku}) }}"
+                                       data-id="{{ product.sku }}" class="btn btn-primary">
+                                        <i class="mdi mdi-cart-plus mdi-18px"></i> Ajouter au panier
+                                    </a>
                                 </td>
                             {% endif %}
                         </tr>
@@ -66,38 +66,5 @@
 
 {% block javascripts %}
     {{ parent() }}
-
-    <script>
-      $(document).ready(function () {
-        $('a').click(function (e) {
-          var element = $(e.target)
-
-          if (element.attr('data-href')) {
-            e.preventDefault()
-
-            const productId = element.data('id')
-
-            var quantity = $('#quantity-product-' + productId).find(':selected').val()
-
-            $.ajax({
-              url: element.data('href'),
-              data: 'quantity=' + quantity,
-              success: function (result) {
-                swal({
-                  title: 'Produit ajouté au panier',
-                  icon: 'success'
-                })
-              },
-              fail: function (result) {
-                swal({
-                  title: 'Echec de l\'ajout',
-                  text: 'L\'ajout à échoué, assurez vous que la quantitée indiqué est supérieure ou égale à 1',
-                  icon: 'error'
-                })
-              }
-            })
-          }
-        })
-      })
-    </script>
+    <script src="{{ asset('build/js/cart.js') }}"></script>
 {% endblock %}
