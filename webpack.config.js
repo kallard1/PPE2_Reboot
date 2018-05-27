@@ -1,4 +1,4 @@
-var Encore = require('@symfony/webpack-encore')
+let Encore = require('@symfony/webpack-encore')
 
 Encore
 // the project directory where compiled assets will be stored
@@ -10,10 +10,9 @@ Encore
   // uncomment to create hashed filenames (e.g. app.abc123.css)
   .enableVersioning(Encore.isProduction())
 
-  .enableTypeScriptLoader()
-
   // uncomment to define the assets of the project
   .addEntry('js/app', './assets/js/app.js')
+  .addEntry('js/cart', './assets/js/cart.js')
   .addStyleEntry('css/app', './assets/sass/app.scss')
 
   // uncomment if you use Sass/SCSS files
