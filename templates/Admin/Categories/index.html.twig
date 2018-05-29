@@ -35,7 +35,7 @@
                 <td>{{ category.createdAt|localizeddate('medium', 'medium', null, 'UTC') }}</td>
                 <td>{{ category.updatedAt|localizeddate('medium', 'medium', null, 'UTC') }}</td>
                 <td>
-                    <a href="{{ path('admin_categories_edit', {slug: category.slug}) }}">
+                    <a href="{{ path('admin_category_edit', {slug: category.slug}) }}">
                         <i class="mdi mdi-pencil mdi-18px"></i>
                     </a>
 
@@ -60,7 +60,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <form action="{{ url('admin_categories_delete', {slug: category.slug}) }}" method="post" data-confirmation="true" id="delete-form">
+                            <form action="{{ url('admin_category_delete', {slug: category.slug}) }}" method="post" data-confirmation="true" id="delete-form">
                                 <input type="hidden" name="token" value="{{ csrf_token('delete') }}" />
                                 <button type="submit" class="btn btn-primary">Delete</button>
                             </form>
