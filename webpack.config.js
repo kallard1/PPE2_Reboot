@@ -13,7 +13,9 @@ Encore
   // uncomment to define the assets of the project
   .addEntry('js/app', './assets/js/app.js')
   .addEntry('js/cart', './assets/js/cart.js')
+  .addEntry('js/admin/categories', './assets/js/admin/categories.js')
   .addStyleEntry('css/app', './assets/sass/app.scss')
+  .addStyleEntry('css/admin/dashboard', './assets/sass/admin/dashboard.scss')
 
   // uncomment if you use Sass/SCSS files
   .enableSassLoader()
@@ -41,4 +43,3 @@ Encore
   })
 
 module.exports = Encore.getWebpackConfig()
-
