@@ -157,6 +157,52 @@
                 <source>category.deleted.successfully</source>
                 <target>Category deleted successfully</target>
             </trans-unit>
+
+            <!-- Admin Products -->
+            <trans-unit id="product.form.name">
+                <source>product.form.name</source>
+                <target>Name</target>
+            </trans-unit>
+
+            <trans-unit id="product.form.sku">
+                <source>product.form.sku</source>
+                <target>SKU</target>
+            </trans-unit>
+
+            <trans-unit id="product.form.description">
+                <source>product.form.description</source>
+                <target>Description</target>
+            </trans-unit>
+
+            <trans-unit id="product.form.categories">
+                <source>product.form.categories</source>
+                <target>Categories</target>
+            </trans-unit>
+
+            <trans-unit id="product.form.price">
+                <source>product.form.price</source>
+                <target>Price</target>
+            </trans-unit>
+
+            <trans-unit id="product.form.promotion">
+                <source>product.form.promotion</source>
+                <target>Promotion</target>
+            </trans-unit>
+
+            <trans-unit id="product.form.stock">
+                <source>product.form.stock</source>
+                <target>Stock</target>
+            </trans-unit>
+
+            <trans-unit id="product.form.status">
+                <source>product.form.status</source>
+                <target>Enabled</target>
+            </trans-unit>
+
+            <trans-unit id="product.deleted.successfully">
+                <source>product.deleted.successfully</source>
+                <target>Product deleted successfully</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

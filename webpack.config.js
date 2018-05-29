@@ -14,6 +14,7 @@ Encore
   .addEntry('js/app', './assets/js/app.js')
   .addEntry('js/cart', './assets/js/cart.js')
   .addEntry('js/admin/categories', './assets/js/admin/categories.js')
+  .addEntry('js/admin/products', './assets/js/admin/products.js')
   .addStyleEntry('css/app', './assets/sass/app.scss')
   .addStyleEntry('css/admin/dashboard', './assets/sass/admin/dashboard.scss')
 

@@ -55,7 +55,7 @@ class VatRate
 
     /**
      * One Product has Many Features.
-     * @ORM\OneToMany(targetEntity="Product", mappedBy="vatRate")
+     * @ORM\OneToOne(targetEntity="Product", mappedBy="vatRate")
      */
     private $product;
 
@@ -207,5 +207,10 @@ class VatRate
     public function getProduct()
     {
         return $this->product;
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 }

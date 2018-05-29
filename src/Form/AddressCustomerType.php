@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\AddressCustomer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -36,7 +37,7 @@ class AddressCustomerType extends AbstractType
                     'maxlength' => 50
                 ]
             ])
-            ->add('country', TextType::class, [
+            ->add('country', CountryType::class, [
                 'attr' => [
                     'placeholder' => 'registration.form.country',
                     'maxlength' => 75

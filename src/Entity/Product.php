@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -96,7 +97,7 @@ class Product
     private $categories;
 
     /**
-     * Many Features have One Product.
+     * Many Products have One VAT Rate.
      * @ORM\ManyToOne(targetEntity="VatRate", inversedBy="product")
      * @ORM\JoinColumn(name="vat_id", referencedColumnName="id")
      */
@@ -107,7 +108,7 @@ class Product
      */
     public function __construct()
     {
-        $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
     /**
