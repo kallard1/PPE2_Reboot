@@ -1,0 +1,79 @@
+{% extends "Admin/base.html.twig" %}
+
+{% block title %}Categories{% endblock %}
+
+{% block body %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">
+            {#<a href="{{ path('admin_add_news') }}">#}
+                {#<i class="mdi mdi-plus-circle mdi-24px"></i>#}
+            {#</a>#}
+            Categories
+        </h1>
+    </div>
+
+    <table id="categories" class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Enabled</th>
+            <th scope="col">Created at</th>
+            <th scope="col">Updated at</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for category in categories %}
+            <tr class="category_{{ category.id }}">
+                <td>{{ category.id }}</td>
+                <td>{{ category.name }}</td>
+                <td>
+                    <i data-id="{{ category.status }}" onclick="publish({{ category.status }}, {{ (category.status) ? 'true' : 'false' }})" class="mdi mdi-18px mdi-{{ (category.status) ? 'checkbox-marked-circle-outline text-success' : 'checkbox-blank-circle-outline text-danger' }}"></i>
+                </td>
+                <td>{{ category.createdAt|localizeddate('medium', 'medium', null, 'UTC') }}</td>
+                <td>{{ category.updatedAt|localizeddate('medium', 'medium', null, 'UTC') }}</td>
+                <td>
+                    <a href="{{ path('admin_categories_edit', {slug: category.slug}) }}">
+                        <i class="mdi mdi-pencil mdi-18px"></i>
+                    </a>
+
+                    <a href="#" data-toggle="modal" data-target="#delete-category-{{ category.slug }}">
+                        <i class="mdi mdi-delete mdi-18px text-danger"></i>
+                    </a>
+                </td>
+            </tr>
+
+            <!-- Modal -->
+            <div class="modal fade" id="delete-category-{{ category.slug }}" tabindex="-1" role="dialog" aria-labelledby="delete-category-{{ category.slug }}" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this post?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            This action cannot be undone.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <form action="{{ url('admin_categories_delete', {slug: category.slug}) }}" method="post" data-confirmation="true" id="delete-form">
+                                <input type="hidden" name="token" value="{{ csrf_token('delete') }}" />
+                                <button type="submit" class="btn btn-primary">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/js/admin/categories.js') }}"></script>
+{% endblock %}

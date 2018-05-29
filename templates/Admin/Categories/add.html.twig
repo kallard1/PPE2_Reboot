@@ -1,0 +1,22 @@
+{% extends 'Admin/base.html.twig' %}
+
+{% block body %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">
+            Add category
+        </h1>
+    </div>
+
+    {{ form_start(form, {'method': 'post', 'action': path('admin_categories_add')}) }}
+        {% include 'Admin/Categories/_form.html.twig' %}
+
+        <div class="modal-footer">
+            <button type="submit" id="_submit" name="_submit" class="btn btn-primary">Add</button>
+        </div>
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block title %}
+Add category
+{% endblock %}
+

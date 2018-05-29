@@ -132,6 +132,31 @@
                 <target>Congrats, your account is now created.</target>
             </trans-unit>
 
+            <!-- Admin Categories -->
+            <trans-unit id="category.form.parent">
+                <source>category.form.parent</source>
+                <target>Parent</target>
+            </trans-unit>
+
+            <trans-unit id="category.form.name">
+                <source>category.form.name</source>
+                <target>Name</target>
+            </trans-unit>
+
+            <trans-unit id="category.form.description">
+                <source>category.form.description</source>
+                <target>Description</target>
+            </trans-unit>
+
+            <trans-unit id="category.form.status">
+                <source>category.form.status</source>
+                <target>Enabled</target>
+            </trans-unit>
+
+            <trans-unit id="category.deleted.successfully">
+                <source>category.deleted.successfully</source>
+                <target>Category deleted successfully</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
