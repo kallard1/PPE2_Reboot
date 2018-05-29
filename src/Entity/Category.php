@@ -53,35 +53,10 @@ class Category
     private $status = false;
 
     /**
-     * @Gedmo\TreeLeft
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $lft;
-
-    /**
-     * @Gedmo\TreeRight
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $rgt;
-
-    /**
-     * @Gedmo\TreeParent
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="children")
      * @ORM\JoinColumn(name="parent_id", referencedColumnName="id", onDelete="CASCADE", nullable=true)
      */
     private $parent;
-
-    /**
-     * @Gedmo\TreeRoot
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $root;
-
-    /**
-     * @Gedmo\TreeLevel
-     * @ORM\Column(name="lvl", type="integer", nullable=true)
-     */
-    private $level;
 
     /**
      * @ORM\OneToMany(targetEntity="Category", mappedBy="parent")
@@ -117,6 +92,7 @@ class Category
     public function __construct()
     {
         $this->products = new ArrayCollection();
+        $this->children = new ArrayCollection();
     }
 
     /**
@@ -218,19 +194,29 @@ class Category
     }
 
     /**
-     * @return mixed
+     * Add children.
+     *
+     * @param Category $category
+     *
+     * @return Category
      */
-    public function getRoot()
+    public function addChildren(Category $category)
     {
-        return $this->root;
+        $this->children[] = $category;
+
+        return $this;
     }
 
     /**
-     * @return mixed
+     * Remove children.
+     *
+     * @param Category $category
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function getLevel()
+    public function removeChildren(Category $category)
     {
-        return $this->level;
+        return $this->children->removeElement($category);
     }
 
     /**
@@ -239,22 +225,6 @@ class Category
     public function getChildren()
     {
         return $this->children;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLeft()
-    {
-        return $this->lft;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRight()
-    {
-        return $this->rgt;
     }
 
     /**
@@ -268,20 +238,6 @@ class Category
     }
 
     /**
-     * Set createdAt.
-     *
-     * @param \DateTime $createdAt
-     *
-     * @return Category
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    /**
      * Get updatedAt.
      *
      * @return \DateTime
@@ -289,20 +245,6 @@ class Category
     public function getUpdatedAt()
     {
         return $this->updatedAt;
-    }
-
-    /**
-     * Set updatedAt.
-     *
-     * @param \DateTime $updatedAt
-     *
-     * @return Category
-     */
-    public function setUpdatedAt($updatedAt)
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
     }
 
     /**
