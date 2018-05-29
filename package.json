@@ -4,6 +4,14 @@
     "ios >= 8"
   ],
   "version": "1.0.1",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev-server": "encore dev-server --hot",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production"
+  },
   "devDependencies": {
     "@symfony/webpack-encore": "^0.19.0",
     "babel-core": "^6.26.3",
@@ -27,14 +35,6 @@
     "node-sass": "^4.9.0",
     "postcss-loader": "^2.1.5",
     "sass-loader": "^7.0.1"
-  },
-  "license": "UNLICENSED",
-  "private": true,
-  "scripts": {
-    "dev-server": "encore dev-server",
-    "dev": "encore dev",
-    "watch": "encore dev --watch",
-    "build": "encore production"
   },
   "dependencies": {
     "@mdi/font": "^2.4.85",
